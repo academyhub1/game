@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engenharia Arcade - Hub de Jogos Educativos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #0a0a0f;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        header {
+            padding: 2rem 1rem;
+            text-align: center;
+            background: linear-gradient(180deg, #1a1a2e 0%, #0a0a0f 100%);
+            border-bottom: 2px solid #00ff88;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #00ff88, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #888;
+            font-weight: 300;
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        /* Game Card */
+        .game-card {
+            background: #1a1a2e;
+            border: 2px solid #2a2a3e;
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(255, 215, 0, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            border-color: #00ff88;
+            box-shadow: 0 10px 40px rgba(0, 255, 136, 0.3);
+        }
+
+        .game-card:hover::before {
+            opacity: 1;
+        }
+
+        .game-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .game-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            color: #00ff88;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .game-description {
+            color: #aaa;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .play-button {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #00ff88, #00cc6a);
+            border: none;
+            border-radius: 8px;
+            color: #0a0a0f;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+            text-transform: uppercase;
+        }
+
+        .play-button:hover {
+            background: linear-gradient(135deg, #00ff88, #00ff88);
+            box-shadow: 0 5px 20px rgba(0, 255, 136, 0.5);
+            transform: scale(1.05);
+        }
+
+        .play-button:active {
+            transform: scale(0.98);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a2e;
+            padding: 2rem 1rem;
+            text-align: center;
+            border-top: 2px solid #00ff88;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: #ffd700;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-link {
+            color: #00ff88;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 0.9rem;
+            }
+
+            .games-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .game-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="logo">🎮 ENGENHARIA ARCADE</h1>
+        <p class="subtitle">Aprenda engenharia jogando</p>
+    </header>
+
+    <main>
+        <div class="games-grid">
+            <!-- Show do Engenheiro -->
+            <div class="game-card">
+                <div class="game-icon">💰</div>
+                <h2 class="game-title">Show do Engenheiro</h2>
+                <p class="game-description">
+                    Teste seus conhecimentos em engenharia mecânica, projetos e SolidWorks!
+                    Responda 15 perguntas e ganhe até R$ 1.000.000. Use ajudas estratégicas
+                    e cuidado com o tempo!
+                </p>
+                <button class="play-button" onclick="window.location.href='games/show-do-engenheiro/index.html'">
+                    Jogar Agora
+                </button>
+            </div>
+
+            <!-- Espaço para futuros jogos -->
+            <!-- Adicione mais cards aqui quando novos jogos forem criados -->
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Engenharia Academy</div>
+            <p>
+                Visite nosso site:
+                <a href="https://engenhariaacademy.com" target="_blank" class="footer-link">
+                    engenhariaacademy.com
+                </a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show do Engenheiro - Engenharia Arcade</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Container Principal -->
+    <div id="game-container">
+
+        <!-- TELA INICIAL -->
+        <div id="start-screen" class="screen active">
+            <div class="logo-container">
+                <h1 class="game-logo">💰 SHOW DO ENGENHEIRO</h1>
+                <p class="game-tagline">Teste seus conhecimentos e ganhe até R$ 1.000.000!</p>
+            </div>
+
+            <div class="player-input-section">
+                <label for="player-name">Digite seu nome:</label>
+                <input type="text" id="player-name" maxlength="20" placeholder="Seu nome aqui">
+                <button id="start-button" class="btn btn-primary" disabled>COMEÇAR JOGO</button>
+            </div>
+
+            <div class="rules-section">
+                <h3>📋 Como Jogar</h3>
+                <ul class="rules-list">
+                    <li>Responda 15 perguntas sobre engenharia mecânica e SolidWorks</li>
+                    <li>Cada pergunta vale um prêmio progressivo até R$ 1.000.000</li>
+                    <li>Você tem 60 segundos por pergunta</li>
+                    <li>Checkpoints em R$ 5.000 e R$ 50.000 (seu prêmio garantido)</li>
+                    <li>3 ajudas disponíveis: Eliminar 2, Pular e Dica</li>
+                    <li>Você pode parar a qualquer momento e levar o prêmio acumulado</li>
+                </ul>
+            </div>
+
+            <div class="records-section">
+                <h3>🏆 Top Recordes</h3>
+                <div id="records-list" class="records-list">
+                    <p class="no-records">Nenhum recorde ainda. Seja o primeiro!</p>
+                </div>
+            </div>
+
+            <button class="btn-back" onclick="window.location.href='../../index.html'">← Voltar ao Menu</button>
+        </div>
+
+        <!-- TELA DE JOGO -->
+        <div id="game-screen" class="screen">
+            <!-- Cabeçalho do jogo -->
+            <div class="game-header">
+                <div class="player-info">
+                    <span class="player-label">Jogador:</span>
+                    <span id="current-player" class="player-name"></span>
+                </div>
+                <div class="question-counter">
+                    Pergunta <span id="current-question-num">1</span> de 15
+                </div>
+                <div class="current-prize">
+                    <span class="prize-label">Prêmio Atual:</span>
+                    <span id="current-prize-value" class="prize-value">R$ 0</span>
+                </div>
+            </div>
+
+            <!-- Timer -->
+            <div class="timer-container">
+                <div class="timer-label">Tempo Restante</div>
+                <div class="timer-display">
+                    <span id="timer-seconds">60</span>s
+                </div>
+                <div class="timer-bar-container">
+                    <div id="timer-bar" class="timer-bar"></div>
+                </div>
+            </div>
+
+            <!-- Pergunta -->
+            <div class="question-container">
+                <div class="question-prize">
+                    <span id="question-prize">R$ 1.000</span>
+                </div>
+                <div class="question-text">
+                    <p id="question-display"></p>
+                </div>
+            </div>
+
+            <!-- Alternativas -->
+            <div class="alternatives-container">
+                <button class="alternative-btn" data-index="0">
+                    <span class="alt-letter">A</span>
+                    <span class="alt-text"></span>
+                </button>
+                <button class="alternative-btn" data-index="1">
+                    <span class="alt-letter">B</span>
+                    <span class="alt-text"></span>
+                </button>
+                <button class="alternative-btn" data-index="2">
+                    <span class="alt-letter">C</span>
+                    <span class="alt-text"></span>
+                </button>
+                <button class="alternative-btn" data-index="3">
+                    <span class="alt-letter">D</span>
+                    <span class="alt-text"></span>
+                </button>
+                <button class="alternative-btn" data-index="4">
+                    <span class="alt-letter">E</span>
+                    <span class="alt-text"></span>
+                </button>
+            </div>
+
+            <!-- Ajudas e Ações -->
+            <div class="actions-container">
+                <div class="helps-container">
+                    <button id="help-eliminate" class="help-btn" title="Elimina 2 alternativas erradas">
+                        <span class="help-icon">❌</span>
+                        <span class="help-text">Eliminar 2</span>
+                    </button>
+                    <button id="help-skip" class="help-btn" title="Pula para próxima pergunta">
+                        <span class="help-icon">⏭️</span>
+                        <span class="help-text">Pular</span>
+                    </button>
+                    <button id="help-hint" class="help-btn" title="Mostra uma dica">
+                        <span class="help-icon">💡</span>
+                        <span class="help-text">Dica</span>
+                    </button>
+                </div>
+                <button id="stop-button" class="btn btn-stop">PARAR E LEVAR O PRÊMIO</button>
+            </div>
+
+            <!-- Área de Dica -->
+            <div id="hint-display" class="hint-display hidden">
+                <strong>💡 Dica:</strong> <span id="hint-text"></span>
+            </div>
+        </div>
+
+        <!-- TELA FINAL -->
+        <div id="end-screen" class="screen">
+            <div class="end-container">
+                <div id="result-icon" class="result-icon">🎉</div>
+                <h2 id="result-title" class="result-title">Parabéns!</h2>
+
+                <div class="final-info">
+                    <p class="final-player">
+                        <strong id="final-player-name"></strong>
+                    </p>
+                    <p class="final-prize">
+                        Prêmio conquistado:<br>
+                        <span id="final-prize-value" class="final-prize-value">R$ 0</span>
+                    </p>
+                    <p class="final-stats">
+                        Você acertou <strong id="final-correct-answers">0</strong> de 15 perguntas
+                    </p>
+                </div>
+
+                <div id="new-record-badge" class="new-record-badge hidden">
+                    ⭐ NOVO RECORDE! ⭐
+                </div>
+
+                <div class="end-actions">
+                    <button id="play-again-button" class="btn btn-primary">🎮 JOGAR NOVAMENTE</button>
+                    <button class="btn btn-secondary" onclick="window.location.href='../../index.html'">← VOLTAR AO MENU</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
