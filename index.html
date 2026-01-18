@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SolidWorks Academy - Simulado Gamificado</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Container Principal -->
+    <div class="container">
+        <!-- Header com Logo -->
+        <header class="header">
+            <div class="logo-container">
+                <h1 class="logo-text">ENGENHARIA <span class="academy-text">ACADEMY</span></h1>
+                <p class="subtitle">Avaliação de SolidWorks</p>
+            </div>
+        </header>
+
+        <!-- Tela Inicial: Seleção de Modo -->
+        <div id="home-screen" class="screen active">
+            <div class="welcome-section">
+                <h2>Bem-vindo ao Simulado de SolidWorks!</h2>
+                <p class="welcome-description">
+                    Escolha seu modo de jogo e teste seus conhecimentos em SolidWorks,
+                    desde conceitos iniciantes até intermediários.
+                </p>
+            </div>
+
+            <div class="mode-selection">
+                <div class="mode-card" id="practice-mode-btn">
+                    <div class="mode-icon">📚</div>
+                    <h3>Modo Simulado</h3>
+                    <p class="mode-description">
+                        Foco no aprendizado! Receba feedback imediato após cada resposta
+                        com explicações detalhadas. Sem pressão, apenas aprendizado.
+                    </p>
+                    <ul class="mode-features">
+                        <li>✓ Feedback imediato</li>
+                        <li>✓ Explicações detalhadas</li>
+                        <li>✓ Sem cronômetro de pressão</li>
+                        <li>✓ Aprenda com seus erros</li>
+                    </ul>
+                    <button class="btn btn-primary">Começar Simulado</button>
+                </div>
+
+                <div class="mode-card" id="exam-mode-btn">
+                    <div class="mode-icon">🏆</div>
+                    <h3>Modo Prova Real</h3>
+                    <p class="mode-description">
+                        Desafio gamificado! Teste seus conhecimentos sob pressão com sistema
+                        de pontuação, combos e aprovação mínima de 7.0.
+                    </p>
+                    <ul class="mode-features">
+                        <li>✓ Sistema de pontuação</li>
+                        <li>✓ Multiplicador de combo</li>
+                        <li>✓ Perda de pontos por erro</li>
+                        <li>✓ Nota mínima: 7.0</li>
+                    </ul>
+                    <button class="btn btn-danger">Iniciar Prova</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tela de Quiz -->
+        <div id="quiz-screen" class="screen">
+            <!-- HUD (Heads-Up Display) -->
+            <div class="hud">
+                <div class="hud-left">
+                    <div class="hud-item">
+                        <span class="hud-label">Questão:</span>
+                        <span id="current-question" class="hud-value">1</span>
+                        <span class="hud-separator">/</span>
+                        <span id="total-questions" class="hud-value">30</span>
+                    </div>
+                    <div class="hud-item">
+                        <span class="hud-label">Nível:</span>
+                        <span id="question-level" class="badge badge-iniciante">Iniciante</span>
+                    </div>
+                    <div class="hud-item">
+                        <span class="hud-label">Tópico:</span>
+                        <span id="question-topic" class="badge badge-topic">Modelagem 3D</span>
+                    </div>
+                </div>
+
+                <!-- Apenas no Modo Prova Real -->
+                <div class="hud-right" id="exam-hud" style="display: none;">
+                    <div class="hud-item">
+                        <span class="hud-label">Pontos:</span>
+                        <span id="score-display" class="hud-value score-value">0</span>
+                    </div>
+                    <div class="hud-item">
+                        <span class="hud-label">Combo:</span>
+                        <span id="combo-display" class="hud-value combo-value">0x</span>
+                    </div>
+                    <div class="hud-item">
+                        <span class="hud-label">Acertos:</span>
+                        <span id="correct-count" class="hud-value">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Barra de Progresso -->
+            <div class="progress-bar-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+
+            <!-- Área da Questão -->
+            <div class="question-container">
+                <h3 class="question-text" id="question-text">
+                    Qual é o principal ambiente de trabalho utilizado para criar geometrias 2D?
+                </h3>
+
+                <div class="options-container" id="options-container">
+                    <!-- Opções serão inseridas dinamicamente -->
+                </div>
+
+                <div class="button-group">
+                    <button id="confirm-btn" class="btn btn-primary" disabled>Confirmar Resposta</button>
+                    <button id="next-btn" class="btn btn-success" style="display: none;">Próxima Questão</button>
+                </div>
+
+                <!-- Área de Feedback (Modo Simulado) -->
+                <div id="feedback-area" class="feedback-area" style="display: none;">
+                    <div id="feedback-result" class="feedback-result"></div>
+                    <div id="feedback-explanation" class="feedback-explanation"></div>
+                </div>
+
+                <!-- Área de Notificação de Pontos (Modo Prova) -->
+                <div id="score-notification" class="score-notification"></div>
+            </div>
+        </div>
+
+        <!-- Tela de Resultados -->
+        <div id="results-screen" class="screen">
+            <div class="results-container">
+                <div id="results-status" class="results-status">
+                    <!-- Aprovado/Reprovado -->
+                </div>
+
+                <div class="results-score">
+                    <h2>Nota Final</h2>
+                    <div class="final-score" id="final-score">0.0</div>
+                </div>
+
+                <div class="results-stats">
+                    <div class="stat-item">
+                        <div class="stat-value" id="total-correct">0</div>
+                        <div class="stat-label">Acertos</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="total-wrong">0</div>
+                        <div class="stat-label">Erros</div>
+                    </div>
+                    <div class="stat-item" id="total-score-container" style="display: none;">
+                        <div class="stat-value" id="total-score">0</div>
+                        <div class="stat-label">Pontos Totais</div>
+                    </div>
+                    <div class="stat-item" id="max-combo-container" style="display: none;">
+                        <div class="stat-value" id="max-combo">0x</div>
+                        <div class="stat-label">Maior Combo</div>
+                    </div>
+                </div>
+
+                <div class="results-message" id="results-message">
+                    <!-- Mensagem personalizada -->
+                </div>
+
+                <div class="button-group">
+                    <button id="retry-btn" class="btn btn-primary">Tentar Novamente</button>
+                    <button id="home-btn" class="btn btn-secondary">Voltar ao Menu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Engenharia Academy - Todos os direitos reservados</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,564 @@
+{
+  "questoes": [
+    {
+      "id": "sw_001",
+      "nivel": "iniciante",
+      "topico": "Interface",
+      "pergunta": "Qual é o principal ambiente de trabalho utilizado para criar geometrias 2D que servirão de base para recursos 3D?",
+      "opcoes": [
+        "a) Ambiente de Montagem",
+        "b) Ambiente de Esboço",
+        "c) Ambiente de Desenho",
+        "d) Ambiente de Simulação"
+      ],
+      "respostaCorreta": "b",
+      "explicacao": "O Ambiente de Esboço (Sketch) é onde você cria perfis 2D que serão usados como base para recursos 3D como extrusões, revoluções, etc."
+    },
+    {
+      "id": "sw_002",
+      "nivel": "iniciante",
+      "topico": "Esboço 2D",
+      "pergunta": "Qual a função da ferramenta 'Aparar Entidades' no ambiente de esboço?",
+      "opcoes": [
+        "a) Criar espelhamento de linhas",
+        "b) Cortar ou estender linhas até a interseção mais próxima",
+        "c) Adicionar restrições geométricas automaticamente",
+        "d) Converter arestas de modelos 3D em linhas de esboço"
+      ],
+      "respostaCorreta": "b",
+      "explicacao": "A ferramenta 'Aparar' (Trim) é usada para remover segmentos de linha indesejados, cortando-os até a interseção mais próxima ou estendendo-os até uma fronteira definida. É essencial para limpar esboços."
+    },
+    {
+      "id": "sw_003",
+      "nivel": "iniciante",
+      "topico": "Esboço 2D",
+      "pergunta": "O que significa quando um esboço está totalmente definido (preto)?",
+      "opcoes": [
+        "a) O esboço possui erros e precisa ser corrigido",
+        "b) O esboço possui dimensões e restrições suficientes para definir completamente sua geometria",
+        "c) O esboço está travado e não pode ser editado",
+        "d) O esboço está incompleto e precisa de mais linhas"
+      ],
+      "respostaCorreta": "b",
+      "explicacao": "Quando um esboço está preto (totalmente definido), significa que possui dimensões e restrições geométricas suficientes para que nenhuma entidade possa se mover livremente. É o estado ideal para a maioria dos recursos 3D."
+    },
+    {
+      "id": "sw_004",
+      "nivel": "iniciante",
+      "topico": "Modelagem 3D",
+      "pergunta": "Qual recurso é usado para criar um furo simples em uma peça 3D?",
+      "opcoes": [
+        "a) Assistente de Perfuração",
+        "b) Apenas Extrusão com Corte",
+        "c) Ambas as opções a e b estão corretas",
+        "d) Revolução de Corte"
+      ],
+      "respostaCorreta": "c",
+      "explicacao": "Você pode criar furos usando o 'Assistente de Perfuração' (Hole Wizard) que oferece opções padronizadas, ou criando um círculo em esboço e fazendo uma 'Extrusão com Corte'. Ambos os métodos são válidos."
+    },
+    {
+      "id": "sw_005",
+      "nivel": "iniciante",
+      "topico": "Modelagem 3D",
+      "pergunta": "O que é uma 'Extrusão de Base'?",
+      "opcoes": [
+        "a) O primeiro recurso sólido de uma peça",
+        "b) Um recurso que sempre remove material",
+        "c) Uma ferramenta para criar montagens",
+        "d) Um tipo de restrição de esboço"
+      ],
+      "respostaCorreta": "a",
+      "explicacao": "A 'Extrusão de Base' (Base Extrude) é normalmente o primeiro recurso sólido criado em uma peça, definindo a forma fundamental a partir de um esboço 2D."
+    },
+    {
+      "id": "sw_006",
+      "nivel": "iniciante",
+      "topico": "Modelagem 3D",
+      "pergunta": "Qual ferramenta é usada para arredondar cantos vivos de uma peça?",
+      "opcoes": [
+        "a) Chanfro",
+        "b) Filete",
+        "c) Casca",
+        "d) Nervura"
+      ],
+      "respostaCorreta": "b",
+      "explicacao": "O 'Filete' (Fillet) é usado para criar cantos arredondados, suavizando arestas vivas. É muito usado para melhorar a ergonomia e a aparência de peças."
+    },
+    {
+      "id": "sw_007",
+      "nivel": "iniciante",
+      "topico": "Modelagem 3D",
+      "pergunta": "O que faz a ferramenta 'Casca' (Shell)?",
+      "opcoes": [
+        "a) Cria uma cópia externa da peça",
+        "b) Remove faces selecionadas e transforma a peça em uma peça oca com espessura de parede uniforme",
+        "c) Adiciona material à peça",
+        "d) Cria um padrão circular de furos"
+      ],
+      "respostaCorreta": "b",
+      "explicacao": "A ferramenta 'Casca' remove as faces selecionadas e cria uma espessura de parede uniforme no restante da peça, tornando-a oca. É muito usada para criar recipientes e caixas."
+    },
+    {
+      "id": "sw_008",
+      "nivel": "intermediario",
+      "topico": "Modelagem 3D",
+      "pergunta": "Qual a diferença entre um 'Padrão Linear' e um 'Padrão Circular'?",
+      "opcoes": [
+        "a) Não há diferença, são sinônimos",
+        "b) Linear repete recursos em linha reta, Circular repete em torno de um eixo",
+        "c) Linear só funciona com furos, Circular com qualquer recurso",
+        "d) Linear é 2D e Circular é 3D"
+      ],
+      "respostaCorreta": "b",
+      "explicacao": "O 'Padrão Linear' repete recursos em uma ou duas direções lineares (como uma grade). O 'Padrão Circular' repete recursos ao redor de um eixo central, criando um padrão rotativo."
+    },
+    {
+      "id": "sw_009",
+      "nivel": "intermediario",
+      "topico": "Esboço 2D",
+      "pergunta": "O que são restrições geométricas?",
+      "opcoes": [
+        "a) Valores numéricos que definem tamanhos",
+        "b) Relações como paralelo, perpendicular, concêntrico que definem comportamento entre entidades",
+        "c) Ferramentas para cortar linhas",
+        "d) Tipos de linhas de construção"
+      ],
+      "respostaCorreta": "b",
+      "explicacao": "Restrições geométricas (como Paralelo, Perpendicular, Tangente, Concêntrico, etc.) definem relacionamentos entre entidades do esboço sem usar valores numéricos, controlando o comportamento e a forma do esboço."
+    },
+    {
+      "id": "sw_010",
+      "nivel": "iniciante",
+      "topico": "Desenho Técnico",
+      "pergunta": "O que é uma vista de seção em um desenho técnico?",
+      "opcoes": [
+        "a) Uma vista que mostra a peça de cima",
+        "b) Uma vista que mostra o interior da peça como se ela fosse cortada",
+        "c) Uma vista que mostra apenas as dimensões",
+        "d) Uma vista em perspectiva isométrica"
+      ],
+      "respostaCorreta": "b",
+      "explicacao": "Uma vista de seção (ou corte) mostra o interior da peça como se ela fosse cortada por um plano, revelando detalhes internos que não seriam visíveis em vistas normais."
+    },
+    {
+      "id": "sw_011",
+      "nivel": "iniciante",
+      "topico": "Montagens",
+      "pergunta": "O que é uma restrição de 'Coincidente' em montagens?",
+      "opcoes": [
+        "a) Alinha duas faces ou eixos para que fiquem no mesmo plano ou linha",
+        "b) Mantém uma distância fixa entre componentes",
+        "c) Faz dois componentes girarem juntos",
+        "d) Remove componentes da montagem"
+      ],
+      "respostaCorreta": "a",
+      "explicacao": "A restrição 'Coincidente' alinha faces, arestas ou pontos de dois componentes para que fiquem no mesmo plano, linha ou ponto. É uma das restrições mais usadas em montagens."
+    },
+    {
+      "id": "sw_012",
+      "nivel": "iniciante",
+      "topico": "Montagens",
+      "pergunta": "Quantos graus de liberdade uma peça tem quando é inserida pela primeira vez em uma montagem vazia?",
+      "opcoes": [
+        "a) 3 graus de liberdade",
+        "b) 0 graus de liberdade (fica fixa)",
+        "c) 6 graus de liberdade",
+        "d) Depende do tamanho da peça"
+      ],
+      "respostaCorreta": "b",
+      "explicacao": "A primeira peça inserida em uma montagem fica automaticamente fixa (0 graus de liberdade), servindo como referência para posicionar os demais componentes. As peças seguintes têm 6 graus de liberdade inicialmente (3 translações e 3 rotações)."
+    },
+    {
+      "id": "sw_013",
+      "nivel": "intermediario",
+      "topico": "Montagens",
+      "pergunta": "Qual é a função da restrição 'Engrenagem' (Gear)?",
+      "opcoes": [
+        "a) Criar dentes de engrenagem automaticamente",
+        "b) Fazer com que dois componentes rotativos girem proporcionalmente um ao outro",
+        "c) Restringir o movimento de engrenagens para que não se movam",
+        "d) Calcular forças em engrenagens"
+      ],
+      "respostaCorreta": "b",
+      "explicacao": "A restrição 'Engrenagem' estabelece uma relação de movimento entre dois componentes rotativos, fazendo com que girem proporcionalmente baseado em uma razão definida (como uma transmissão por engrenagens)."
+    },
+    {
+      "id": "sw_014",
+      "nivel": "intermediario",
+      "topico": "Modelagem 3D",
+      "pergunta": "O que é um 'Plano de Referência'?",
+      "opcoes": [
+        "a) Um plano visível apenas no modo de simulação",
+        "b) Um plano auxiliar criado para servir como base para esboços ou restrições",
+        "c) O plano inicial que vem com cada peça",
+        "d) Um tipo de vista de desenho"
+      ],
+      "respostaCorreta": "b",
+      "explicacao": "Planos de Referência são planos auxiliares criados pelo usuário para servir como base para novos esboços, restrições ou recursos quando os planos padrão não são adequados."
+    },
+    {
+      "id": "sw_015",
+      "nivel": "intermediario",
+      "topico": "Modelagem 3D",
+      "pergunta": "O que acontece quando você edita um esboço base em uma peça com vários recursos?",
+      "opcoes": [
+        "a) Apenas o esboço é alterado, os recursos 3D permanecem iguais",
+        "b) A árvore de recursos é recalculada e os recursos subsequentes são atualizados",
+        "c) Todos os recursos são deletados",
+        "d) Nada acontece, esboços base não podem ser editados"
+      ],
+      "respostaCorreta": "b",
+      "explicacao": "O SolidWorks usa modelagem paramétrica baseada em histórico. Quando você edita um esboço base, todos os recursos que dependem dele são automaticamente recalculados, propagando as mudanças pela árvore de recursos."
+    },
+    {
+      "id": "sw_016",
+      "nivel": "iniciante",
+      "topico": "Desenho Técnico",
+      "pergunta": "Qual é a função da ferramenta 'Anotação Inteligente' (Smart Dimension)?",
+      "opcoes": [
+        "a) Criar notas de texto no desenho",
+        "b) Adicionar dimensões automaticamente baseadas no tipo de geometria selecionada",
+        "c) Importar dimensões de outro arquivo",
+        "d) Verificar se o desenho está correto"
+      ],
+      "respostaCorreta": "b",
+      "explicacao": "'Anotação Inteligente' detecta automaticamente o tipo de geometria selecionada e cria a dimensão apropriada (linear, angular, radial, etc.), agilizando o processo de cotagem."
+    },
+    {
+      "id": "sw_017",
+      "nivel": "iniciante",
+      "topico": "Interface",
+      "pergunta": "O que é a 'Árvore de Projetos de Recursos' (FeatureManager)?",
+      "opcoes": [
+        "a) Uma lista organizada de todos os recursos, esboços e planos da peça ou montagem",
+        "b) Uma ferramenta para criar árvores e plantas em 3D",
+        "c) Um menu de configurações do SolidWorks",
+        "d) Uma biblioteca de recursos prontos"
+      ],
+      "respostaCorreta": "a",
+      "explicacao": "A 'FeatureManager Design Tree' é o painel lateral que mostra uma lista hierárquica de todos os recursos, esboços, planos e operações que compõem a peça ou montagem, permitindo edição e gerenciamento."
+    },
+    {
+      "id": "sw_018",
+      "nivel": "intermediario",
+      "topico": "Chapa Metálica",
+      "pergunta": "O que é o 'Fator K' em chapas metálicas?",
+      "opcoes": [
+        "a) A espessura da chapa",
+        "b) Uma constante que determina como o material se comporta durante a dobra",
+        "c) O número de dobras permitidas",
+        "d) A força necessária para dobrar a chapa"
+      ],
+      "respostaCorreta": "b",
+      "explicacao": "O 'Fator K' representa a posição da linha neutra durante a dobra da chapa metálica, afetando o cálculo do comprimento planificado. Ele varia conforme o material e processo de dobra."
+    },
+    {
+      "id": "sw_019",
+      "nivel": "intermediario",
+      "topico": "Chapa Metálica",
+      "pergunta": "Qual ferramenta converte uma peça de chapa metálica dobrada em sua forma planificada?",
+      "opcoes": [
+        "a) Desdobrar",
+        "b) Achatar (Flatten)",
+        "c) Rebater",
+        "d) Expandir"
+      ],
+      "respostaCorreta": "b",
+      "explicacao": "A ferramenta 'Achatar' ou 'Planificar' (Flatten) mostra a chapa metálica em sua forma planificada, útil para criar desenhos de fabricação e programação de máquinas de corte."
+    },
+    {
+      "id": "sw_020",
+      "nivel": "iniciante",
+      "topico": "Modelagem 3D",
+      "pergunta": "O que é uma 'Revolução' como recurso 3D?",
+      "opcoes": [
+        "a) Girar a vista 360 graus",
+        "b) Criar um sólido girando um esboço 2D ao redor de um eixo",
+        "c) Fazer uma peça girar em uma montagem",
+        "d) Criar um padrão circular"
+      ],
+      "respostaCorreta": "b",
+      "explicacao": "A 'Revolução' (Revolve) cria um recurso 3D girando um perfil 2D ao redor de um eixo, geralmente usado para criar peças cilíndricas, cônicas ou com simetria radial como vasos, polias, eixos, etc."
+    },
+    {
+      "id": "sw_021",
+      "nivel": "intermediario",
+      "topico": "Modelagem 3D",
+      "pergunta": "Qual a diferença entre 'Loft' e 'Sweep'?",
+      "opcoes": [
+        "a) São a mesma ferramenta com nomes diferentes",
+        "b) Loft faz transição entre perfis, Sweep extruir um perfil ao longo de um caminho",
+        "c) Loft é 2D e Sweep é 3D",
+        "d) Loft só funciona com círculos"
+      ],
+      "respostaCorreta": "b",
+      "explicacao": "'Loft' cria uma transição suave entre dois ou mais perfis. 'Sweep' extruir um perfil ao longo de um caminho/trajetória. Ambas criam formas complexas, mas de maneiras diferentes."
+    },
+    {
+      "id": "sw_022",
+      "nivel": "iniciante",
+      "topico": "Esboço 2D",
+      "pergunta": "Qual cor indica que um esboço está subdefinido?",
+      "opcoes": [
+        "a) Preto",
+        "b) Azul",
+        "c) Vermelho",
+        "d) Verde"
+      ],
+      "respostaCorreta": "b",
+      "explicacao": "Azul indica que o esboço está subdefinido (ainda possui graus de liberdade). Preto significa totalmente definido, e vermelho indica sobredefinido ou com erros."
+    },
+    {
+      "id": "sw_023",
+      "nivel": "intermediario",
+      "topico": "Simulação",
+      "pergunta": "Em uma análise estática no SolidWorks Simulation, o que é necessário definir antes de executar o estudo?",
+      "opcoes": [
+        "a) Apenas a cor da peça",
+        "b) Material, restrições (fixações) e cargas aplicadas",
+        "c) Apenas o nome do arquivo",
+        "d) Temperatura ambiente"
+      ],
+      "respostaCorreta": "b",
+      "explicacao": "Para uma análise estática válida, você precisa definir: 1) Material da peça, 2) Restrições/fixações (onde a peça está presa), e 3) Cargas aplicadas (forças, pressões, etc.)."
+    },
+    {
+      "id": "sw_024",
+      "nivel": "iniciante",
+      "topico": "Desenho Técnico",
+      "pergunta": "O que é uma 'Vista de Detalhe'?",
+      "opcoes": [
+        "a) Uma vista que mostra a peça inteira",
+        "b) Uma vista ampliada de uma região específica para mostrar detalhes pequenos",
+        "c) Uma vista em perspectiva",
+        "d) Uma vista de corte"
+      ],
+      "respostaCorreta": "b",
+      "explicacao": "A 'Vista de Detalhe' (Detail View) é uma ampliação de uma região específica de uma vista, permitindo mostrar detalhes pequenos ou complexos com maior clareza."
+    },
+    {
+      "id": "sw_025",
+      "nivel": "intermediario",
+      "topico": "Montagens",
+      "pergunta": "O que é uma 'Submontagem'?",
+      "opcoes": [
+        "a) Uma montagem defeituosa",
+        "b) Uma montagem inserida como componente dentro de outra montagem maior",
+        "c) Uma peça muito pequena",
+        "d) Um tipo de restrição"
+      ],
+      "respostaCorreta": "b",
+      "explicacao": "Uma 'Submontagem' é uma montagem completa que é inserida como um único componente em uma montagem maior, permitindo organização hierárquica de projetos complexos."
+    },
+    {
+      "id": "sw_026",
+      "nivel": "iniciante",
+      "topico": "Modelagem 3D",
+      "pergunta": "O que faz a ferramenta 'Chanfro' (Chamfer)?",
+      "opcoes": [
+        "a) Arredonda cantos",
+        "b) Cria um corte angular em uma aresta",
+        "c") Remove material em forma cilíndrica",
+        "d) Adiciona textura à superfície"
+      ],
+      "respostaCorreta": "b",
+      "explicacao": "O 'Chanfro' cria um corte angular (bisel) em arestas selecionadas, formando uma superfície inclinada. É usado para quebrar cantos vivos e facilitar montagem."
+    },
+    {
+      "id": "sw_027",
+      "nivel": "intermediario",
+      "topico": "Esboço 2D",
+      "pergunta": "O que são 'Linhas de Construção' em um esboço?",
+      "opcoes": [
+        "a) Linhas que serão usadas para criar recursos 3D",
+        "b) Linhas auxiliares que não participam da geometria do recurso, usadas apenas como referência",
+        "c) Linhas que constroem automaticamente a peça",
+        "d) Linhas que mostram as dimensões"
+      ],
+      "respostaCorreta": "b",
+      "explicacao": "Linhas de Construção (tracejadas) são linhas auxiliares usadas como referência para criar geometria ou aplicar restrições, mas não participam do perfil que será usado para criar recursos 3D."
+    },
+    {
+      "id": "sw_028",
+      "nivel": "iniciante",
+      "topico": "Montagens",
+      "pergunta": "Qual tipo de arquivo o SolidWorks usa para montagens?",
+      "opcoes": [
+        "a) .SLDPRT",
+        "b) .SLDASM",
+        "c) .SLDDRW",
+        "d) .DWG"
+      ],
+      "respostaCorreta": "b",
+      "explicacao": "SolidWorks usa três extensões principais: .SLDPRT para peças, .SLDASM para montagens, e .SLDDRW para desenhos técnicos."
+    },
+    {
+      "id": "sw_029",
+      "nivel": "intermediario",
+      "topico": "Modelagem 3D",
+      "pergunta": "O que é uma 'Configuração' no SolidWorks?",
+      "opcoes": [
+        "a) As preferências do software",
+        "b) Diferentes variações de uma peça ou montagem dentro do mesmo arquivo",
+        "c) O computador onde o SolidWorks está instalado",
+        "d) Um tipo de restrição"
+      ],
+      "respostaCorreta": "b",
+      "explicacao": "Configurações permitem criar múltiplas variações de uma peça ou montagem (diferentes dimensões, recursos suprimidos, etc.) dentro de um único arquivo, facilitando o gerenciamento de famílias de produtos."
+    },
+    {
+      "id": "sw_030",
+      "nivel": "intermediario",
+      "topico": "Desenho Técnico",
+      "pergunta": "O que é uma 'Tabela de Lista de Materiais' (BOM)?",
+      "opcoes": [
+        "a) Uma lista de ferramentas do SolidWorks",
+        "b) Uma tabela que lista todos os componentes de uma montagem com quantidades e descrições",
+        "c) Uma tabela de dimensões",
+        "d) Um tipo de vista de desenho"
+      ],
+      "respostaCorreta": "b",
+      "explicacao": "A BOM (Bill of Materials) é uma tabela que lista todos os componentes de uma montagem, incluindo quantidade, número de peça, descrição e outras informações relevantes para fabricação e compra."
+    },
+    {
+      "id": "sw_031",
+      "nivel": "iniciante",
+      "topico": "Esboço 2D",
+      "pergunta": "Qual ferramenta permite copiar entidades de esboço de forma espelhada?",
+      "opcoes": [
+        "a) Rotação",
+        "b) Espelhar Entidades",
+        "c) Padrão Linear",
+        "d) Translação"
+      ],
+      "respostaCorreta": "b",
+      "explicacao": "'Espelhar Entidades' (Mirror) cria uma cópia espelhada de geometria de esboço em relação a uma linha de centro, muito útil para criar formas simétricas."
+    },
+    {
+      "id": "sw_032",
+      "nivel": "iniciante",
+      "topico": "Modelagem 3D",
+      "pergunta": "O que é necessário para criar uma 'Extrusão de Corte'?",
+      "opcoes": [
+        "a) Apenas clicar em um botão, não precisa de esboço",
+        "b) Um esboço 2D em uma face ou plano da peça existente",
+        "c) Uma montagem completa",
+        "d) Uma vista de desenho"
+      ],
+      "respostaCorreta": "b",
+      "explicacao": "Para criar uma 'Extrusão de Corte' (Cut Extrude), você precisa primeiro criar um esboço 2D em uma face ou plano da peça existente, depois extruir esse perfil para remover material."
+    },
+    {
+      "id": "sw_033",
+      "nivel": "intermediario",
+      "topico": "Chapa Metálica",
+      "pergunta": "Qual recurso é usado para criar abas de dobra em peças de chapa metálica?",
+      "opcoes": [
+        "a) Aba de Aresta (Edge Flange)",
+        "b) Extrusão de Base",
+        "c) Revolução",
+        "d) Loft"
+      ],
+      "respostaCorreta": "a",
+      "explicacao": "'Aba de Aresta' (Edge Flange) é o recurso específico de chapa metálica usado para criar abas dobradas a partir de arestas de uma peça base, mantendo as propriedades de chapa metálica."
+    },
+    {
+      "id": "sw_034",
+      "nivel": "intermediario",
+      "topico": "Montagens",
+      "pergunta": "O que faz a restrição 'Concêntrica'?",
+      "opcoes": [
+        "a) Alinha dois componentes lado a lado",
+        "b) Alinha os centros de dois cilindros ou círculos",
+        "c) Fixa o componente no espaço",
+        "d) Cria uma distância entre componentes"
+      ],
+      "respostaCorreta": "b",
+      "explicacao": "A restrição 'Concêntrica' alinha os eixos centrais de duas entidades cilíndricas ou circulares, fazendo com que compartilhem o mesmo eixo. É muito usada para posicionar eixos em furos."
+    },
+    {
+      "id": "sw_035",
+      "nivel": "iniciante",
+      "topico": "Interface",
+      "pergunta": "O que são os três planos padrão que aparecem em toda nova peça?",
+      "opcoes": [
+        "a) Superior, Inferior e Lateral",
+        "b) Frente, Direito e Superior",
+        "c) X, Y e Z",
+        "d) Norte, Sul e Leste"
+      ],
+      "respostaCorreta": "b",
+      "explicacao": "Toda nova peça do SolidWorks vem com três planos de referência padrão perpendiculares entre si: Plano Frente (Front), Plano Direito (Right) e Plano Superior (Top), que servem como base para iniciar esboços."
+    },
+    {
+      "id": "sw_036",
+      "nivel": "intermediario",
+      "topico": "Modelagem 3D",
+      "pergunta": "O que é uma 'Nervura' (Rib)?",
+      "opcoes": [
+        "a) Um osso da peça",
+        "b) Um recurso fino que adiciona resistência estrutural a uma peça",
+        "c) Uma linha de construção",
+        "d) Um tipo de rosca"
+      ],
+      "respostaCorreta": "b",
+      "explicacao": "Uma 'Nervura' (Rib) é um recurso fino que adiciona material para reforço estrutural, muito usado em peças plásticas e fundidas para aumentar rigidez sem adicionar muito peso."
+    },
+    {
+      "id": "sw_037",
+      "nivel": "iniciante",
+      "topico": "Desenho Técnico",
+      "pergunta": "Qual é o formato de arquivo padrão para salvar desenhos técnicos no SolidWorks?",
+      "opcoes": [
+        "a) .PDF",
+        "b) .DWG",
+        "c) .SLDDRW",
+        "d) .JPG"
+      ],
+      "respostaCorreta": "c",
+      "explicacao": "O formato nativo de desenhos técnicos do SolidWorks é .SLDDRW, mas ele também pode exportar para outros formatos como .PDF, .DWG (AutoCAD) e imagens."
+    },
+    {
+      "id": "sw_038",
+      "nivel": "intermediario",
+      "topico": "Simulação",
+      "pergunta": "O que representa a 'Tensão de von Mises' em uma análise de simulação?",
+      "opcoes": [
+        "a) A temperatura da peça",
+        "b) Uma medida da tensão combinada usada para prever falha em materiais dúcteis",
+        "c) O peso da peça",
+        "d) A velocidade de deformação"
+      ],
+      "respostaCorreta": "b",
+      "explicacao": "A Tensão de von Mises é um critério de falha que combina as tensões normais e cisalhantes em um valor único, usado para prever quando um material dúctil começará a escoar (plastificar). Se a tensão de von Mises exceder o limite de escoamento do material, há risco de falha."
+    },
+    {
+      "id": "sw_039",
+      "nivel": "intermediario",
+      "topico": "Modelagem 3D",
+      "pergunta": "Qual a vantagem de usar o 'Assistente de Perfuração' ao invés de uma extrusão de corte simples para criar furos?",
+      "opcoes": [
+        "a) Nenhuma, são exatamente iguais",
+        "b) O Assistente oferece furos padronizados (escareados, roscados, etc.) com dimensões corretas",
+        "c) O Assistente é mais rápido mas menos preciso",
+        "d) O Assistente só funciona em montagens"
+      ],
+      "respostaCorreta": "b",
+      "explicacao": "O 'Assistente de Perfuração' (Hole Wizard) oferece tipos de furos padronizados (roscados, escareados, passantes, etc.) com dimensões baseadas em normas industriais, garantindo especificações corretas e facilitando a documentação."
+    },
+    {
+      "id": "sw_040",
+      "nivel": "iniciante",
+      "topico": "Montagens",
+      "pergunta": "Como você adiciona uma nova peça a uma montagem existente?",
+      "opcoes": [
+        "a) Desenhando diretamente na montagem",
+        "b) Usando 'Inserir Componentes' e selecionando o arquivo da peça",
+        "c) Copiando e colando de outro software",
+        "d) Não é possível adicionar peças depois de criar a montagem"
+      ],
+      "respostaCorreta": "b",
+      "explicacao": "Você adiciona componentes a uma montagem usando 'Inserir Componentes' e selecionando o arquivo .SLDPRT da peça. Depois, usa restrições de montagem para posicionar corretamente a peça."
+    }
+  ]
+}
