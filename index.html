@@ -3,183 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SolidWorks Academy - Simulado Gamificado</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>SOLIDWORKS ARENA - Arcade Challenge</title>
+    <link rel="stylesheet" href="css/arcade.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Container Principal -->
-    <div class="container">
-        <!-- Header com Logo -->
-        <header class="header">
-            <div class="logo-container">
-                <h1 class="logo-text">ENGENHARIA <span class="academy-text">ACADEMY</span></h1>
-                <p class="subtitle">Avaliação de SolidWorks</p>
-            </div>
-        </header>
+    <!-- Scanlines Effect -->
+    <div class="scanlines"></div>
 
-        <!-- Tela Inicial: Seleção de Modo -->
-        <div id="home-screen" class="screen active">
-            <div class="welcome-section">
-                <h2>Bem-vindo ao Simulado de SolidWorks!</h2>
-                <p class="welcome-description">
-                    Escolha seu modo de jogo e teste seus conhecimentos em SolidWorks,
-                    desde conceitos iniciantes até intermediários.
-                </p>
-            </div>
+    <!-- CRT Screen Container -->
+    <div class="crt-container">
 
-            <div class="mode-selection">
-                <div class="mode-card" id="practice-mode-btn">
-                    <div class="mode-icon">📚</div>
-                    <h3>Modo Simulado</h3>
-                    <p class="mode-description">
-                        Foco no aprendizado! Receba feedback imediato após cada resposta
-                        com explicações detalhadas. Sem pressão, apenas aprendizado.
-                    </p>
-                    <ul class="mode-features">
-                        <li>✓ Feedback imediato</li>
-                        <li>✓ Explicações detalhadas</li>
-                        <li>✓ Sem cronômetro de pressão</li>
-                        <li>✓ Aprenda com seus erros</li>
-                    </ul>
-                    <button class="btn btn-primary">Começar Simulado</button>
+        <!-- ==================== TELA 1: INSERT COIN ==================== -->
+        <div id="screen-insert-coin" class="screen active">
+            <div class="arcade-cabinet">
+                <div class="cabinet-top"></div>
+                <div class="cabinet-screen">
+                    <div class="screen-glow"></div>
+
+                    <div class="title-area">
+                        <h1 class="neon-title glitch" data-text="SOLIDWORKS">SOLIDWORKS</h1>
+                        <h2 class="neon-subtitle">A R E N A</h2>
+                        <div class="title-decoration">
+                            <span class="deco-line"></span>
+                            <span class="deco-diamond">◆</span>
+                            <span class="deco-line"></span>
+                        </div>
+                    </div>
+
+                    <div class="insert-coin-animation">
+                        <div class="coin">🪙</div>
+                        <p class="blink-text">INSERT COIN</p>
+                        <p class="press-start">PRESS START</p>
+                    </div>
+
+                    <div class="game-modes">
+                        <button class="arcade-button mode-easy" data-mode="easy">
+                            <span class="button-label">INICIANTE</span>
+                            <span class="button-subtitle">30 Questões • 3 Vidas</span>
+                        </button>
+                        <button class="arcade-button mode-hard" data-mode="hard">
+                            <span class="button-label">MESTRE</span>
+                            <span class="button-subtitle">50 Questões • 1 Vida</span>
+                        </button>
+                    </div>
+
+                    <div class="high-scores-preview">
+                        <p class="high-score-title">▼ HIGH SCORES ▼</p>
+                        <div id="top-scores" class="scores-list">
+                            <div class="score-entry">1ST... 50000 PTS... ACE</div>
+                            <div class="score-entry">2ND... 35000 PTS... PRO</div>
+                            <div class="score-entry">3RD... 20000 PTS... CAD</div>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="mode-card" id="exam-mode-btn">
-                    <div class="mode-icon">🏆</div>
-                    <h3>Modo Prova Real</h3>
-                    <p class="mode-description">
-                        Desafio gamificado! Teste seus conhecimentos sob pressão com sistema
-                        de pontuação, combos e aprovação mínima de 7.0.
-                    </p>
-                    <ul class="mode-features">
-                        <li>✓ Sistema de pontuação</li>
-                        <li>✓ Multiplicador de combo</li>
-                        <li>✓ Perda de pontos por erro</li>
-                        <li>✓ Nota mínima: 7.0</li>
-                    </ul>
-                    <button class="btn btn-danger">Iniciar Prova</button>
-                </div>
+                <div class="cabinet-bottom"></div>
             </div>
         </div>
 
-        <!-- Tela de Quiz -->
-        <div id="quiz-screen" class="screen">
-            <!-- HUD (Heads-Up Display) -->
-            <div class="hud">
+        <!-- ==================== TELA 2: GAMEPLAY ==================== -->
+        <div id="screen-gameplay" class="screen">
+            <!-- HUD Superior -->
+            <div class="hud-top">
                 <div class="hud-left">
-                    <div class="hud-item">
-                        <span class="hud-label">Questão:</span>
-                        <span id="current-question" class="hud-value">1</span>
-                        <span class="hud-separator">/</span>
-                        <span id="total-questions" class="hud-value">30</span>
+                    <div class="stat-box">
+                        <span class="stat-label">SCORE</span>
+                        <span id="score-display" class="stat-value neon-text">000000</span>
                     </div>
-                    <div class="hud-item">
-                        <span class="hud-label">Nível:</span>
-                        <span id="question-level" class="badge badge-iniciante">Iniciante</span>
-                    </div>
-                    <div class="hud-item">
-                        <span class="hud-label">Tópico:</span>
-                        <span id="question-topic" class="badge badge-topic">Modelagem 3D</span>
+                    <div class="stat-box">
+                        <span class="stat-label">LEVEL</span>
+                        <span id="level-display" class="stat-value">01</span>
                     </div>
                 </div>
 
-                <!-- Apenas no Modo Prova Real -->
-                <div class="hud-right" id="exam-hud" style="display: none;">
-                    <div class="hud-item">
-                        <span class="hud-label">Pontos:</span>
-                        <span id="score-display" class="hud-value score-value">0</span>
+                <div class="hud-center">
+                    <div id="lives-display" class="lives-container">
+                        <span class="life-icon">♥</span>
+                        <span class="life-icon">♥</span>
+                        <span class="life-icon">♥</span>
                     </div>
-                    <div class="hud-item">
-                        <span class="hud-label">Combo:</span>
-                        <span id="combo-display" class="hud-value combo-value">0x</span>
+                </div>
+
+                <div class="hud-right">
+                    <div class="stat-box">
+                        <span class="stat-label">COMBO</span>
+                        <span id="combo-display" class="stat-value combo-text">x1</span>
                     </div>
-                    <div class="hud-item">
-                        <span class="hud-label">Acertos:</span>
-                        <span id="correct-count" class="hud-value">0</span>
+                    <div class="stat-box">
+                        <span class="stat-label">TIME</span>
+                        <span id="timer-display" class="stat-value timer-text">15</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Barra de Progresso -->
-            <div class="progress-bar-container">
-                <div id="progress-bar" class="progress-bar"></div>
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div id="progress-bar" class="progress-fill"></div>
+                <span id="progress-text" class="progress-label">QUESTÃO 1/30</span>
+            </div>
+
+            <!-- Timer Bar (Countdown visual) -->
+            <div class="timer-bar-container">
+                <div id="timer-bar" class="timer-bar-fill"></div>
             </div>
 
             <!-- Área da Questão -->
-            <div class="question-container">
-                <h3 class="question-text" id="question-text">
-                    Qual é o principal ambiente de trabalho utilizado para criar geometrias 2D?
-                </h3>
+            <div class="question-arena">
+                <div class="category-badge">
+                    <span id="category-display">MODELAGEM 3D</span>
+                </div>
 
-                <div class="options-container" id="options-container">
+                <div class="question-box">
+                    <p id="question-text" class="question-text">
+                        Carregando questão...
+                    </p>
+                </div>
+
+                <div id="options-container" class="options-grid">
                     <!-- Opções serão inseridas dinamicamente -->
                 </div>
+            </div>
 
-                <div class="button-group">
-                    <button id="confirm-btn" class="btn btn-primary" disabled>Confirmar Resposta</button>
-                    <button id="next-btn" class="btn btn-success" style="display: none;">Próxima Questão</button>
+            <!-- Particle Effects Container -->
+            <div id="particles-container" class="particles"></div>
+
+            <!-- Score Popup -->
+            <div id="score-popup" class="score-popup"></div>
+        </div>
+
+        <!-- ==================== TELA 3: GAME OVER ==================== -->
+        <div id="screen-gameover" class="screen">
+            <div class="gameover-container">
+                <div id="gameover-status" class="gameover-title">
+                    <span class="glitch" data-text="GAME OVER">GAME OVER</span>
                 </div>
 
-                <!-- Área de Feedback (Modo Simulado) -->
-                <div id="feedback-area" class="feedback-area" style="display: none;">
-                    <div id="feedback-result" class="feedback-result"></div>
-                    <div id="feedback-explanation" class="feedback-explanation"></div>
+                <div class="final-stats">
+                    <div class="stat-display">
+                        <div class="stat-icon">🏆</div>
+                        <div class="stat-info">
+                            <span class="stat-name">PONTUAÇÃO FINAL</span>
+                            <span id="final-score" class="stat-number neon-text">000000</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-display">
+                        <div class="stat-icon">✅</div>
+                        <div class="stat-info">
+                            <span class="stat-name">ACERTOS</span>
+                            <span id="final-correct" class="stat-number">00</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-display">
+                        <div class="stat-icon">❌</div>
+                        <div class="stat-info">
+                            <span class="stat-name">ERROS</span>
+                            <span id="final-wrong" class="stat-number">00</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-display">
+                        <div class="stat-icon">🔥</div>
+                        <div class="stat-info">
+                            <span class="stat-name">MAIOR COMBO</span>
+                            <span id="final-combo" class="stat-number">x00</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-display">
+                        <div class="stat-icon">📊</div>
+                        <div class="stat-info">
+                            <span class="stat-name">APROVEITAMENTO</span>
+                            <span id="final-grade" class="stat-number">0.0</span>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Área de Notificação de Pontos (Modo Prova) -->
-                <div id="score-notification" class="score-notification"></div>
+                <div id="achievement-message" class="achievement-box">
+                    <p class="achievement-text">🌟 EXPERT SOLIDWORKS 🌟</p>
+                </div>
+
+                <!-- Ranking -->
+                <div class="ranking-container">
+                    <h3 class="ranking-title">═══ HALL OF FAME ═══</h3>
+                    <div id="ranking-list" class="ranking-list">
+                        <!-- Será preenchido dinamicamente -->
+                    </div>
+                </div>
+
+                <div class="gameover-actions">
+                    <button id="btn-play-again" class="arcade-button btn-continue">
+                        <span class="button-label">▶ CONTINUE</span>
+                        <span class="button-subtitle">Jogar Novamente</span>
+                    </button>
+                    <button id="btn-menu" class="arcade-button btn-menu">
+                        <span class="button-label">◀ MENU</span>
+                        <span class="button-subtitle">Voltar ao Início</span>
+                    </button>
+                </div>
+
+                <p class="continue-countdown blink-text">
+                    <span id="continue-timer">Continue em 10s...</span>
+                </p>
             </div>
         </div>
 
-        <!-- Tela de Resultados -->
-        <div id="results-screen" class="screen">
-            <div class="results-container">
-                <div id="results-status" class="results-status">
-                    <!-- Aprovado/Reprovado -->
-                </div>
-
-                <div class="results-score">
-                    <h2>Nota Final</h2>
-                    <div class="final-score" id="final-score">0.0</div>
-                </div>
-
-                <div class="results-stats">
-                    <div class="stat-item">
-                        <div class="stat-value" id="total-correct">0</div>
-                        <div class="stat-label">Acertos</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-value" id="total-wrong">0</div>
-                        <div class="stat-label">Erros</div>
-                    </div>
-                    <div class="stat-item" id="total-score-container" style="display: none;">
-                        <div class="stat-value" id="total-score">0</div>
-                        <div class="stat-label">Pontos Totais</div>
-                    </div>
-                    <div class="stat-item" id="max-combo-container" style="display: none;">
-                        <div class="stat-value" id="max-combo">0x</div>
-                        <div class="stat-label">Maior Combo</div>
-                    </div>
-                </div>
-
-                <div class="results-message" id="results-message">
-                    <!-- Mensagem personalizada -->
-                </div>
-
-                <div class="button-group">
-                    <button id="retry-btn" class="btn btn-primary">Tentar Novamente</button>
-                    <button id="home-btn" class="btn btn-secondary">Voltar ao Menu</button>
-                </div>
-            </div>
-        </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2024 Engenharia Academy - Todos os direitos reservados</p>
-    </footer>
+    <!-- Audio Elements (visual feedback) -->
+    <div class="audio-visualizer" id="audio-viz"></div>
 
     <!-- Scripts -->
-    <script src="js/app.js"></script>
+    <script src="js/arcade.js"></script>
 </body>
 </html>
