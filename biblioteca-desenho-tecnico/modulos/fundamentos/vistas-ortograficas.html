@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vistas Ortograficas — Engenharia Academy</title>
+  <link rel="stylesheet" href="../../css/global.css">
+  <link rel="stylesheet" href="../../css/vistas-ortograficas.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <a href="../../index.html" class="logo">
+        <div class="logo-icon">&#9998;</div>
+        Engenharia<span>Academy</span>
+      </a>
+      <nav class="main-nav">
+        <a href="../../index.html">Modulos</a>
+        <a href="#conteudo" class="active">Vistas</a>
+        <a href="#quiz-section">Quiz</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs animate-fade-in">
+      <a href="../../index.html">Inicio</a>
+      <span class="separator">&#9656;</span>
+      <a href="../../index.html#modulos">Fundamentos</a>
+      <span class="separator">&#9656;</span>
+      <span class="current">Vistas Ortograficas</span>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero animate-fade-in-up">
+      <div class="hero-left">
+        <span class="tag tag-orange">Modulo 01 &mdash; Fundamentos</span>
+        <h1>Vistas <span>Ortograficas</span></h1>
+        <p class="hero-desc">
+          Se voce nao entende vistas ortograficas, voce nao le desenho tecnico. Ponto.
+          Aqui voce vai aprender as 6 vistas principais e entender de uma vez por todas
+          a diferenca entre 1&ordm; e 3&ordm; diedro.
+        </p>
+        <div class="hero-meta">
+          <span class="meta-item">&#9201; ~15 min de leitura</span>
+          <span class="meta-item">&#127919; Quiz interativo incluso</span>
+          <span class="meta-item">&#128230; Cubo 3D manipulavel</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content Section -->
+    <section id="conteudo" class="content-grid">
+
+      <!-- Left: Theory -->
+      <article class="theory-column">
+
+        <div class="content-block animate-fade-in-up delay-1">
+          <h2>O que sao <span>Vistas Ortograficas</span>?</h2>
+          <p>
+            Imagina que voce pega uma peca, coloca dentro de uma caixa de vidro e olha
+            para ela de cada lado. Cada "fotografia" que voce tira olhando de frente, de
+            cima, da direita... isso eh uma vista ortografica.
+          </p>
+          <p>
+            Sao projecoes 2D de um objeto 3D. Sem perspectiva, sem enfeite. So a
+            verdade geometrica da peca, sem distorcao nenhuma.
+          </p>
+
+          <div class="callout callout-warning">
+            <span class="callout-icon">&#9888;</span>
+            <div class="callout-content">
+              <h4>Papo reto</h4>
+              <p>
+                Na fabrica, se voce entrega um desenho com a vista errada, a peca volta.
+                E quem paga eh voce. Entao presta atencao.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-block animate-fade-in-up delay-2">
+          <h2>As <span>6 Vistas</span> Principais</h2>
+          <p>
+            A norma (NBR 10067 / ISO 128) define 6 vistas possiveis. Na pratica,
+            voce quase nunca vai usar as 6. Em 90% dos casos, 3 vistas resolvem.
+            Mas voce precisa saber quais sao:
+          </p>
+
+          <div class="views-list">
+            <div class="view-item" data-face="front">
+              <div class="view-number">1</div>
+              <div class="view-info">
+                <h4>Vista Frontal (VF)</h4>
+                <p>A vista principal. Mostra a face que melhor define a peca. Tudo comeca aqui.</p>
+              </div>
+            </div>
+            <div class="view-item" data-face="top">
+              <div class="view-number">2</div>
+              <div class="view-info">
+                <h4>Vista Superior (VS)</h4>
+                <p>Olhando de cima. Fica embaixo da VF no 1&ordm; diedro, em cima no 3&ordm;.</p>
+              </div>
+            </div>
+            <div class="view-item" data-face="right">
+              <div class="view-number">3</div>
+              <div class="view-info">
+                <h4>Vista Lateral Direita (VLD)</h4>
+                <p>Olhando da direita. No 1&ordm; diedro fica a esquerda da VF. No 3&ordm;, a direita.</p>
+              </div>
+            </div>
+            <div class="view-item" data-face="left">
+              <div class="view-number">4</div>
+              <div class="view-info">
+                <h4>Vista Lateral Esquerda (VLE)</h4>
+                <p>O espelho da VLD. Usada quando a peca tem detalhes criticos do lado esquerdo.</p>
+              </div>
+            </div>
+            <div class="view-item" data-face="bottom">
+              <div class="view-number">5</div>
+              <div class="view-info">
+                <h4>Vista Inferior (VI)</h4>
+                <p>Olhando de baixo. Raramente usada, so quando tem geometria escondida embaixo.</p>
+              </div>
+            </div>
+            <div class="view-item" data-face="back">
+              <div class="view-number">6</div>
+              <div class="view-info">
+                <h4>Vista Posterior (VP)</h4>
+                <p>A traseira da peca. Quase nunca aparece em desenhos industriais.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="callout callout-info">
+            <span class="callout-icon">&#128161;</span>
+            <div class="callout-content">
+              <h4>Dica de fabrica</h4>
+              <p>
+                Na industria, 3 vistas (Frontal + Superior + Lateral Direita) resolvem 90% dos
+                casos. So adicione mais se a peca for realmente complexa. Desenho bom eh desenho
+                simples.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-block animate-fade-in-up delay-3">
+          <h2>1&ordm; Diedro vs 3&ordm; Diedro</h2>
+          <p>
+            Isso aqui eh o que mais confunde gente. A diferenca eh so a posicao de onde
+            voce "projeta" a vista. Pensa assim:
+          </p>
+
+          <div class="diedro-comparison">
+            <div class="diedro-card">
+              <div class="diedro-header diedro-1">
+                <span class="diedro-symbol">&#9673;</span>
+                <h3>1&ordm; Diedro (ISO / Europa)</h3>
+              </div>
+              <div class="diedro-body">
+                <p class="diedro-rule">
+                  <strong>Regra:</strong> A vista fica do lado <em>oposto</em> de onde voce olha.
+                </p>
+                <div class="diedro-layout">
+                  <div class="dl-empty"></div>
+                  <div class="dl-cell">VF</div>
+                  <div class="dl-cell highlight-cell">VLE</div>
+                  <div class="dl-cell">VS</div>
+                  <div class="dl-cell">VF</div>
+                  <div class="dl-cell">VLD</div>
+                </div>
+                <p class="diedro-usage">&#127463;&#127479; Padrao brasileiro (ABNT).</p>
+              </div>
+            </div>
+
+            <div class="diedro-vs">VS</div>
+
+            <div class="diedro-card">
+              <div class="diedro-header diedro-3">
+                <span class="diedro-symbol">&#9737;</span>
+                <h3>3&ordm; Diedro (ANSI / EUA)</h3>
+              </div>
+              <div class="diedro-body">
+                <p class="diedro-rule">
+                  <strong>Regra:</strong> A vista fica do <em>mesmo lado</em> de onde voce olha.
+                </p>
+                <div class="diedro-layout">
+                  <div class="dl-empty"></div>
+                  <div class="dl-cell">VS</div>
+                  <div class="dl-empty"></div>
+                  <div class="dl-cell">VLE</div>
+                  <div class="dl-cell">VF</div>
+                  <div class="dl-cell highlight-cell">VLD</div>
+                </div>
+                <p class="diedro-usage">&#127482;&#127480; Padrao americano (ASME).</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="callout callout-danger">
+            <span class="callout-icon">&#9760;</span>
+            <div class="callout-content">
+              <h4>Erro que custa caro</h4>
+              <p>
+                Misturar diedros no mesmo desenho eh um dos erros mais comuns &mdash; e mais graves.
+                Sempre confira o simbolo no selo (legenda) do desenho antes de comecar a ler.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </article>
+
+      <!-- Right: Interactive 3D Cube -->
+      <aside class="interactive-column">
+        <div class="sticky-interactive">
+
+          <div class="interactive-panel">
+            <div class="panel-header">
+              <h3>&#128230; Cubo Interativo 3D</h3>
+              <p>Arraste para rotacionar. Clique nas faces.</p>
+            </div>
+
+            <div class="cube-viewport" id="cubeViewport">
+              <div class="cube-scene">
+                <div class="cube" id="cube">
+                  <div class="cube-face front" data-face="front">
+                    <span class="face-label">FRONTAL</span>
+                    <span class="face-sublabel">VF</span>
+                  </div>
+                  <div class="cube-face back" data-face="back">
+                    <span class="face-label">POSTERIOR</span>
+                    <span class="face-sublabel">VP</span>
+                  </div>
+                  <div class="cube-face right" data-face="right">
+                    <span class="face-label">LAT. DIR.</span>
+                    <span class="face-sublabel">VLD</span>
+                  </div>
+                  <div class="cube-face left" data-face="left">
+                    <span class="face-label">LAT. ESQ.</span>
+                    <span class="face-sublabel">VLE</span>
+                  </div>
+                  <div class="cube-face top" data-face="top">
+                    <span class="face-label">SUPERIOR</span>
+                    <span class="face-sublabel">VS</span>
+                  </div>
+                  <div class="cube-face bottom" data-face="bottom">
+                    <span class="face-label">INFERIOR</span>
+                    <span class="face-sublabel">VI</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick rotate buttons -->
+            <div class="cube-controls">
+              <button class="ctrl-btn" data-rotate="front" title="Vista Frontal">VF</button>
+              <button class="ctrl-btn" data-rotate="top" title="Vista Superior">VS</button>
+              <button class="ctrl-btn" data-rotate="right" title="Vista Lateral Direita">VLD</button>
+              <button class="ctrl-btn" data-rotate="left" title="Vista Lateral Esquerda">VLE</button>
+              <button class="ctrl-btn" data-rotate="bottom" title="Vista Inferior">VI</button>
+              <button class="ctrl-btn" data-rotate="back" title="Vista Posterior">VP</button>
+            </div>
+
+            <!-- Active face indicator -->
+            <div class="active-face-display" id="activeFaceDisplay">
+              <div class="afd-label">Face selecionada:</div>
+              <div class="afd-name" id="activeFaceName">Nenhuma</div>
+              <div class="afd-desc" id="activeFaceDesc">Clique em uma face ou use os botoes acima.</div>
+            </div>
+          </div>
+
+          <!-- 2D Views Panel -->
+          <div class="interactive-panel views-2d-panel">
+            <div class="panel-header">
+              <h3>&#128203; Projecao 2D</h3>
+              <p>A vista 2D correspondente a face selecionada.</p>
+            </div>
+
+            <div class="views-2d-container" id="views2dContainer">
+              <div class="view-2d-placeholder" id="view2dPlaceholder">
+                <span class="placeholder-icon">&#8634;</span>
+                <p>Selecione uma face do cubo para ver a projecao 2D</p>
+              </div>
+
+              <!-- 2D projection display -->
+              <div class="view-2d-display hidden" id="view2dDisplay">
+                <div class="projection-grid" id="projectionGrid">
+                  <!-- SVG projections rendered by JS -->
+                </div>
+                <div class="projection-info" id="projectionInfo"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </aside>
+
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quiz-section" class="quiz-section animate-fade-in-up">
+      <div class="section-title" style="text-align:center;">
+        <h2>&#127919; Quiz: Identifique a <span>Vista</span></h2>
+        <p style="margin:0 auto;">Teste se voce realmente entendeu. Sem consulta, sem choro.</p>
+      </div>
+
+      <div class="quiz-container" id="quizContainer">
+        <!-- Quiz progress -->
+        <div class="quiz-progress">
+          <div class="quiz-progress-bar" id="quizProgressBar"></div>
+        </div>
+        <div class="quiz-progress-text" id="quizProgressText">Pergunta 1 de 5</div>
+
+        <!-- Question area -->
+        <div class="quiz-question-area" id="quizQuestionArea">
+          <div class="quiz-figure" id="quizFigure">
+            <!-- SVG figure rendered by JS -->
+          </div>
+          <h3 class="quiz-question-text" id="quizQuestionText"></h3>
+        </div>
+
+        <!-- Options -->
+        <div class="quiz-options" id="quizOptions">
+          <!-- Options rendered by JS -->
+        </div>
+
+        <!-- Feedback -->
+        <div class="quiz-feedback hidden" id="quizFeedback">
+          <div class="feedback-icon" id="feedbackIcon"></div>
+          <div class="feedback-text" id="feedbackText"></div>
+        </div>
+
+        <!-- Next button -->
+        <button class="btn btn-primary quiz-next hidden" id="quizNext">
+          Proxima &rarr;
+        </button>
+      </div>
+
+      <!-- Quiz result -->
+      <div class="quiz-result hidden" id="quizResult">
+        <div class="result-score" id="resultScore"></div>
+        <div class="result-message" id="resultMessage"></div>
+        <button class="btn btn-primary" id="quizRestart">Tentar de novo</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer navigation -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-nav">
+        <a href="../../index.html" class="btn btn-ghost">&larr; Voltar ao Hub</a>
+        <span class="footer-module-label">Modulo 01 &mdash; Fundamentos</span>
+        <span class="btn btn-ghost" style="opacity:0.3;cursor:default;">Proximo: Escalas &rarr;</span>
+      </div>
+      <p>Engenharia Academy &mdash; Conteudo direto do chao de fabrica.</p>
+    </div>
+  </footer>
+
+  <script src="../../js/vistas-ortograficas.js"></script>
+</body>
+</html>
