@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engenharia Academy — Biblioteca de Desenho Técnico</title>
+  <link rel="stylesheet" href="css/global.css">
+  <style>
+    /* --- Hero --- */
+    .hero {
+      padding: var(--space-3xl) 0 var(--space-2xl);
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-sm);
+      background: var(--accent-primary-soft);
+      color: var(--accent-primary);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: var(--fs-xs);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: var(--space-lg);
+    }
+
+    .hero h1 {
+      font-size: var(--fs-hero);
+      font-weight: 900;
+      letter-spacing: -2px;
+      line-height: 1.1;
+      margin-bottom: var(--space-lg);
+    }
+
+    .hero h1 .highlight {
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      color: var(--text-secondary);
+      font-size: var(--fs-lg);
+      max-width: 620px;
+      margin: 0 auto var(--space-xl);
+      line-height: 1.7;
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-2xl);
+      margin-top: var(--space-xl);
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: var(--fs-3xl);
+      font-weight: 900;
+      color: var(--accent-primary);
+    }
+
+    .stat-label {
+      font-size: var(--fs-xs);
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 2px;
+    }
+
+    /* --- Modules Grid --- */
+    .modules-section {
+      padding: var(--space-2xl) 0 var(--space-3xl);
+    }
+
+    .modules-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: var(--space-xl);
+    }
+
+    .module-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .module-card .card-number {
+      position: absolute;
+      top: var(--space-lg);
+      right: var(--space-lg);
+      font-size: var(--fs-3xl);
+      font-weight: 900;
+      color: rgba(255, 255, 255, 0.04);
+      line-height: 1;
+    }
+
+    .module-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--fs-2xl);
+      margin-bottom: var(--space-lg);
+    }
+
+    .icon-orange { background: var(--accent-primary-soft); }
+    .icon-blue { background: var(--accent-secondary-soft); }
+
+    .module-card h3 {
+      font-size: var(--fs-xl);
+      font-weight: 700;
+      margin-bottom: var(--space-sm);
+    }
+
+    .module-card p {
+      color: var(--text-secondary);
+      font-size: var(--fs-sm);
+      line-height: 1.6;
+      margin-bottom: var(--space-lg);
+    }
+
+    .module-topics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+      margin-bottom: var(--space-lg);
+    }
+
+    .module-topics .topic-tag {
+      background: var(--bg-glass);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: var(--fs-xs);
+    }
+
+    .module-link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-sm);
+      color: var(--accent-primary);
+      font-size: var(--fs-sm);
+      font-weight: 600;
+      transition: gap var(--transition-fast);
+    }
+
+    .module-link:hover {
+      gap: var(--space-md);
+    }
+
+    .module-link .arrow {
+      transition: transform var(--transition-fast);
+    }
+
+    .module-link:hover .arrow {
+      transform: translateX(3px);
+    }
+
+    /* Module status badges */
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: var(--fs-xs);
+      font-weight: 600;
+      margin-bottom: var(--space-md);
+    }
+
+    .status-available {
+      background: var(--success-soft);
+      color: var(--success);
+    }
+
+    .status-coming {
+      background: var(--warning-soft);
+      color: var(--warning);
+    }
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: var(--radius-full);
+      animation: pulse 2s infinite;
+    }
+
+    .status-available .status-dot { background: var(--success); }
+    .status-coming .status-dot { background: var(--warning); }
+
+    @media (max-width: 768px) {
+      .modules-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-stats {
+        gap: var(--space-lg);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">&#9998;</div>
+        Engenharia<span>Academy</span>
+      </a>
+      <nav class="main-nav">
+        <a href="#modulos" class="active">Modulos</a>
+        <a href="#sobre">Sobre</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero container animate-fade-in-up">
+      <div class="hero-badge">&#9881; Biblioteca Interativa</div>
+      <h1>
+        Desenho Tecnico<br>
+        <span class="highlight">Sem Enrolacao</span>
+      </h1>
+      <p class="hero-sub">
+        Aqui nao tem PowerPoint bonito nem professor lendo slide.
+        E conteudo direto do chao de fabrica, do jeito que voce vai usar de verdade.
+      </p>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-number">6</div>
+          <div class="stat-label">Modulos</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">30+</div>
+          <div class="stat-label">Topicos</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Interativo</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modules -->
+    <section id="modulos" class="modules-section container">
+      <div class="section-title animate-fade-in-up">
+        <h2>Modulos <span>Disponiveis</span></h2>
+        <p>Cada modulo eh uma etapa da sua formacao. Comece pelos fundamentos e avance no seu ritmo.</p>
+      </div>
+
+      <div class="modules-grid">
+
+        <!-- Module 1 -->
+        <div class="card module-card animate-fade-in-up delay-1">
+          <div class="card-number">01</div>
+          <div class="status-badge status-available">
+            <span class="status-dot"></span> Disponivel
+          </div>
+          <div class="module-icon icon-orange">&#9634;</div>
+          <h3>Fundamentos</h3>
+          <p>Diedros, vistas ortograficas, escalas e o basico que todo desenhista precisa dominar antes de qualquer outra coisa.</p>
+          <div class="module-topics">
+            <span class="topic-tag">Diedros</span>
+            <span class="topic-tag">Vistas</span>
+            <span class="topic-tag">Escalas</span>
+            <span class="topic-tag">Projecoes</span>
+          </div>
+          <a href="modulos/fundamentos/vistas-ortograficas.html" class="module-link">
+            Acessar modulo <span class="arrow">&rarr;</span>
+          </a>
+        </div>
+
+        <!-- Module 2 -->
+        <div class="card module-card animate-fade-in-up delay-2">
+          <div class="card-number">02</div>
+          <div class="status-badge status-coming">
+            <span class="status-dot"></span> Em breve
+          </div>
+          <div class="module-icon icon-blue">&#9585;</div>
+          <h3>Elementos Graficos</h3>
+          <p>Tipos de linhas, cotagem NBR, tolerancias GD&amp;T. O idioma universal que a fabrica inteira precisa falar.</p>
+          <div class="module-topics">
+            <span class="topic-tag">Linhas</span>
+            <span class="topic-tag">Cotas</span>
+            <span class="topic-tag">GD&amp;T</span>
+            <span class="topic-tag">Simbolos</span>
+          </div>
+          <span class="module-link" style="opacity:0.4;cursor:default;">
+            Em desenvolvimento <span class="arrow">&rarr;</span>
+          </span>
+        </div>
+
+        <!-- Module 3 -->
+        <div class="card module-card animate-fade-in-up delay-3">
+          <div class="card-number">03</div>
+          <div class="status-badge status-coming">
+            <span class="status-dot"></span> Em breve
+          </div>
+          <div class="module-icon icon-orange">&#9698;</div>
+          <h3>Representacoes</h3>
+          <p>Cortes, secoes, hachuras e vistas auxiliares. Quando a peca fica complexa, eh aqui que se separa quem sabe de quem chuta.</p>
+          <div class="module-topics">
+            <span class="topic-tag">Cortes</span>
+            <span class="topic-tag">Hachuras</span>
+            <span class="topic-tag">Secoes</span>
+            <span class="topic-tag">3D</span>
+          </div>
+          <span class="module-link" style="opacity:0.4;cursor:default;">
+            Em desenvolvimento <span class="arrow">&rarr;</span>
+          </span>
+        </div>
+
+        <!-- Module 4 -->
+        <div class="card module-card animate-fade-in-up delay-4">
+          <div class="card-number">04</div>
+          <div class="status-badge status-coming">
+            <span class="status-dot"></span> Em breve
+          </div>
+          <div class="module-icon icon-blue">&#9881;</div>
+          <h3>Elementos de Maquinas</h3>
+          <p>Roscas, engrenagens, molas, soldas. A representacao tecnica de tudo que faz uma maquina funcionar.</p>
+          <div class="module-topics">
+            <span class="topic-tag">Roscas</span>
+            <span class="topic-tag">Soldas</span>
+            <span class="topic-tag">Molas</span>
+            <span class="topic-tag">Engrenagens</span>
+          </div>
+          <span class="module-link" style="opacity:0.4;cursor:default;">
+            Em desenvolvimento <span class="arrow">&rarr;</span>
+          </span>
+        </div>
+
+        <!-- Module 5 -->
+        <div class="card module-card animate-fade-in-up delay-5">
+          <div class="card-number">05</div>
+          <div class="status-badge status-coming">
+            <span class="status-dot"></span> Em breve
+          </div>
+          <div class="module-icon icon-orange">&#128196;</div>
+          <h3>Documentacao</h3>
+          <p>Folha de desenho, legenda, BOM (lista de materiais). Sem documentacao correta, seu desenho nao vale nada.</p>
+          <div class="module-topics">
+            <span class="topic-tag">Folhas</span>
+            <span class="topic-tag">Legendas</span>
+            <span class="topic-tag">BOM</span>
+            <span class="topic-tag">Revisoes</span>
+          </div>
+          <span class="module-link" style="opacity:0.4;cursor:default;">
+            Em desenvolvimento <span class="arrow">&rarr;</span>
+          </span>
+        </div>
+
+        <!-- Module 6 -->
+        <div class="card module-card animate-fade-in-up delay-6">
+          <div class="card-number">06</div>
+          <div class="status-badge status-coming">
+            <span class="status-dot"></span> Em breve
+          </div>
+          <div class="module-icon icon-blue">&#128295;</div>
+          <h3>Fluxo de Projeto</h3>
+          <p>Ciclo de vida do desenho, CAD vs desenho manual, erros comuns que custam caro. A visao de quem ja passou por isso.</p>
+          <div class="module-topics">
+            <span class="topic-tag">Ciclo</span>
+            <span class="topic-tag">CAD</span>
+            <span class="topic-tag">Erros</span>
+            <span class="topic-tag">Boas praticas</span>
+          </div>
+          <span class="module-link" style="opacity:0.4;cursor:default;">
+            Em desenvolvimento <span class="arrow">&rarr;</span>
+          </span>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>Engenharia Academy &mdash; Conteudo direto do chao de fabrica.</p>
+      <p style="margin-top:var(--space-sm)">Feito com &#9998; e cafe forte.</p>
+    </div>
+  </footer>
+
+  <!-- Scroll animation observer -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animationPlayState = 'running';
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.animate-fade-in-up').forEach(el => {
+        el.style.animationPlayState = 'paused';
+        observer.observe(el);
+      });
+    });
+  </script>
+
+</body>
+</html>
